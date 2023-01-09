@@ -32,7 +32,7 @@ I don’t understand why we don’t have an app/website for recording event data
           - synchronization modes: full, partial, query only
              - https://www.reddit.com/r/signal/comments/a2ogk2/this_is_how_signal_protocol_encrypts_group/
           - search/retrieval: graphQL https://github.com/apollographql/apollo-server https://github.com/apollographql/apollo-client
-     - reference client implementation - i.e. this repository
+     - reference implementation - i.e. this repository
         - user facing: 
             - Feed view
             - Group chat/direct messages
