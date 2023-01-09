@@ -22,20 +22,26 @@ I don’t understand why we don’t have an app/website for recording event data
      - ontology
         - Where: lat-long - ISO 6709
         - when: datetime - ISO 8601
-        - Who: #tags, @tags, Public / group-restricted / private
+        - Who: #tags, @tags
+        - For Whom: public (unencrypted) or private (encrypted)
         - What: content or link to content - markdown? Text, Image, Video?
         - Why: links
     - p2p exchange protocol
        - scenarios:
           - authentication/authorization/encryption: Signal protocol: https://github.com/signalapp/libsignal, https://www.npmjs.com/package/libsignal-protocol
+            - identifies principals and establishes levels of trust
           - aggregation/syndication/synchronizations
-          - synchronization modes: full, partial, query only
-             - https://www.reddit.com/r/signal/comments/a2ogk2/this_is_how_signal_protocol_encrypts_group/
+            - synchronization modes: full, partial, query only
+              - full synchronization: all data is replicated to all group members
+              - partial synchronizations: some group members designated as data stores, data is replicated to them and encrypted with the 
+              - query only: certain group members provide data but data is not replicated to them
+            - https://www.reddit.com/r/signal/comments/a2ogk2/this_is_how_signal_protocol_encrypts_group/
           - search/retrieval: graphQL https://github.com/apollographql/apollo-server https://github.com/apollographql/apollo-client
+            - query federation negotiated at the group level by synchronization elections
      - reference implementation - i.e. this repository
         - user facing: 
             - Feed view
             - Group chat/direct messages
             - Map view with time slider
-     - under the hood:
-       - https://en.wikipedia.org/wiki/Spatial_database#Table_of_free_systems_especially_for_spatial_data_processing
+       - under the hood:
+         - https://en.wikipedia.org/wiki/Spatial_database#Table_of_free_systems_especially_for_spatial_data_processing
